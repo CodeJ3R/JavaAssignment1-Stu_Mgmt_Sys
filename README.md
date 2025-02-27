@@ -39,7 +39,7 @@ How it Works
 References for building this project
 ====================================
 
-Classes with nadia, my instructor
+Classes with nadia, my instructor.
 Callobrating with my colleagues: Josh and Judah
 [W3schools](https://www.w3schools.com/java/java_oop.asp)
 https://www.freecodecamp.org/news/object-oriented-programming-concepts-java/
