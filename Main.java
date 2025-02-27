@@ -9,20 +9,36 @@
 /*  the idea for press enter to continue is here
  https://stackoverflow.com/questions/19870467/how-do-i-get-press-any-key-to-continue-to-work-in-my-java-code
 */
+// Importing array utility
 import java.util.ArrayList;
+// Importing scanner object
 import java.util.Scanner;
 
 public class Main {
+    // new scanner
     public static Scanner scanner = new Scanner(System.in);
+    // new array to hold student info from user
     public static ArrayList<Student> Students = new ArrayList<Student>();
     public static void main(String[] args) throws Exception {
-
+        // basically default untill the loop starts
         int userExit = 0;
         System.out.println("\t*****************************************************************\n");
         System.out.println("\t\tWelcome to the Student Grades System V1.1 :D\n\n");
         System.out.println("\t*****************************************************************\n\n");
+        System.out.println("\t\t\tPress Enter to Continue\n");
+        System.out.println("\t*****************************************************************\n\n");
+        // waiting for the user to press enter before continueing
+        try
+        {
+            System.in.read();
+        }
+        catch(Exception e)
+        {}
+        System.out.println("\t*****************************************************************\n");
         System.out.println("\t\tPlease choose from one of the following FOUR options!\n");
         System.out.println("\t*****************************************************************\n");
+
+
         do {
             // option 1 for adding student
             System.out.println("\nPress 1 to add new student");
@@ -96,7 +112,9 @@ public class Main {
                     break;
                 // Search By ID
                 case 3:
-                    System.out.print("\nPlease enter the ID of the student: \n\n");
+                    System.out.println("\n*****************************************************************\n");
+                    System.out.print("\n\nPlease enter the ID of the student: \n\n");
+                    System.out.println("*****************************************************************\n\n");
 
                     String idLookup = scanner.nextLine();
 
@@ -104,7 +122,9 @@ public class Main {
                         // Need this to compare strings ALWAYS use .equals when dealing with strings
                         if (i.getStudentID().equals(idLookup)) {
                             // Successfully finds the unique ID in the array list
-                            System.out.println("\nID Located\n\n");
+                            System.out.println("\n*****************************************************************\n");
+                            System.out.println("\n\nID Located\n\n");
+                            System.out.println("*****************************************************************\n\n");
                             i.displayDetails();
                             break;
                         } else {
@@ -131,7 +151,7 @@ public class Main {
                 // Exit
                 case 4:
                     // this is the kill switch
-                    userExit = 1;
+                    userExit = 4;
                     System.out.println("\t*****************************************************************\n");
                     System.out.println("\t\tThank you for using the  Student Grades System V1.1 :D\n\n");
                     System.out.println("\t*****************************************************************\n\n");
@@ -139,8 +159,8 @@ public class Main {
                     default:
                     System.out.println("Please enter a number between 1-4");   
             }
-            // This keeps working until user hits 1 to end it
-        } while (userExit != 1);
+            // This keeps working until user hits 4 to end it
+        } while (userExit != 4);
         // As Doug Says be a good programmer and close your scanner when you're done!
         scanner.close();
         /*
