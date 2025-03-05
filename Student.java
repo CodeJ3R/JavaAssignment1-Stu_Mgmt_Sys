@@ -11,16 +11,16 @@ public class Student extends Person {
     private double GPA;
     private static int idCounter = 1000;
 
-    public static String generateStudentId() {
+    private static String generateStudentId() {
         return "S" + (idCounter++);
     } 
 
     // constructor
-    Student(String major, String name, int age, String address){
+    Student(String major, double GPA, String name, int age, String address){
         // super has to be the first thing in the instructor or it will ALWAYS throw errors :( *Shout out to judah for this*
         super(name, age, address);
         this.major = major;
-        this.GPA = 0.0;
+        this.GPA = GPA;
     }
  
     public String getStudentID() {
@@ -35,7 +35,7 @@ public class Student extends Person {
     }
 
     public void setStudentID(String studentID) {this.studentID = studentID;}
-    public void settMajor(String major) {this.major = major;}
+    public void setMajor(String major) {this.major = major;}
     public void setGPA(double GPA) {this.GPA = GPA;}
 
     @Override
@@ -45,7 +45,7 @@ public class Student extends Person {
         System.out.println("Their address is " + getAddress());
         System.out.println("Their ID is " + studentID);
         System.out.println("Their Major is " + major);
-        System.out.println("Their GPA is " + GPA);
+        System.out.println("Their GPA is " + getGPA());
         System.out.println("\n******************\n");
         System.out.println("End of Student Details");
         System.out.println("\n******************\n");

@@ -74,6 +74,10 @@ public class Main {
                     // Input for name of Major
                     System.out.print("\nPlease Enter the Major: \n\n");
                     String studentMajor = scanner.nextLine();
+                    // Input for GPA
+                    System.out.print("\nPlease Enter their GPA: \n\n");
+                    double studentGPA = scanner.nextDouble();
+                    scanner.nextLine();
                     // Input for name of Name
                     System.out.print("\nPlease Enter the name: \n\n");
                     String studentName = scanner.nextLine();
@@ -88,7 +92,7 @@ public class Main {
                     // Same as line 15, causes scanner to skip
                    
                     // storing data in the array list
-                    Students.add(new Student(studentMajor, studentName, studentAge, studentAddress));
+                    Students.add(new Student(studentMajor,studentGPA, studentName, studentAge, studentAddress));
                     System.out.println("\n*****************************************************************\n");
                     System.out.println("\t\tRegistration Successful!\n\n");
                     System.out.println("*****************************************************************\n\n");
